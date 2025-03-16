@@ -206,7 +206,7 @@ const TransactionsSection: React.FC = () => {
     const response = await fetch('/classify', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'src/components/classify.json',
         },
         body: JSON.stringify(transactions),
     });
