@@ -5,7 +5,8 @@ import {
   Banknote, 
   History, 
   Calculator, 
-  MessageSquare 
+  MessageSquare,
+  TrendingUp 
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -18,6 +19,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
   const tabs = [
     { id: 'pay', label: 'Pay', icon: Banknote },
     { id: 'transactions', label: 'Your Transactions', icon: History },
+    { id: 'invest', label: 'Invest', icon: TrendingUp },
     { id: 'calculator', label: 'Financial Calculator', icon: Calculator },
     { id: 'sagebot', label: 'SageBot', icon: MessageSquare },
   ];

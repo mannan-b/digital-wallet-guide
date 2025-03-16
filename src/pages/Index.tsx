@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import Navigation from '@/components/Navigation';
 import PaySection from '@/components/PaySection';
 import TransactionsSection from '@/components/TransactionsSection';
+import InvestSection from '@/components/InvestSection';
 import CalculatorSection from '@/components/CalculatorSection';
 import SageBotSection from '@/components/SageBotSection';
 
@@ -32,6 +33,7 @@ const Index = () => {
         >
           {activeTab === 'pay' && <PaySection />}
           {activeTab === 'transactions' && <TransactionsSection />}
+          {activeTab === 'invest' && <InvestSection />}
           {activeTab === 'calculator' && <CalculatorSection />}
           {activeTab === 'sagebot' && <SageBotSection />}
         </motion.div>
