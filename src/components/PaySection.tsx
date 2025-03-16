@@ -52,7 +52,7 @@ const PaySection: React.FC = () => {
       3. Exchange public token for access token
       4. Make the actual transaction
       
-      Example:*/
+      Example:
       const makeTransaction = async () => {
         // Your Plaid API key would be used here
         const PLAID_API_KEY = "YOUR_PLAID_API_KEY";
@@ -114,6 +114,7 @@ const PaySection: React.FC = () => {
         
         handler.open();
       };
+      */
       
       // For now, we'll just simulate success for the demo
       setIsSuccess(true);
