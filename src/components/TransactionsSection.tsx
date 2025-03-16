@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -12,7 +11,7 @@ import {
   Home,
   Car,
   Utensils,
-  Airplane
+  Plane
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -88,7 +87,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   food: <Utensils className="h-4 w-4" />,
   housing: <Home className="h-4 w-4" />,
   transport: <Car className="h-4 w-4" />,
-  travel: <Airplane className="h-4 w-4" />,
+  travel: <Plane className="h-4 w-4" />,
 };
 
 // Category colors mapping
