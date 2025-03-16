@@ -202,44 +202,24 @@ const TransactionsSection: React.FC = () => {
               <TabsContent value={activeFilter} className="mt-6">
                 {/* TRANSACTION CLASSIFICATION ML MODEL INTEGRATION POINT */}
                 {/* ------------------------------------------------------ */}
-                {/* 
-                This is where you would integrate your ML model for transaction classification.
-                
-                Example pseudo-code:
-                
-                const classifyTransactions = async (transactions) => {
-                  // Load the ML model (e.g., using TensorFlow.js or a similar library)
-                  // This could be a model that's been trained on transaction data
-                  // to classify transactions into categories
-                  
-                  const model = await tf.loadLayersModel('path/to/your/model.json');
-                  
-                  // Preprocess transaction data for the model
-                  const processedData = transactions.map(transaction => {
-                    // Extract features from transaction (e.g., description, amount, etc.)
-                    // Convert them to appropriate format for the model
-                    return [...] // Features array
-                  });
-                  
-                  // Make predictions with the model
-                  const predictions = model.predict(tf.tensor(processedData));
-                  
-                  // Convert predictions to category labels
-                  const categories = predictions.map(pred => {
-                    // Map prediction values to category labels
-                    return categoryMappings[argMax(pred)];
-                  });
-                  
-                  // Return transactions with added categories
-                  return transactions.map((transaction, i) => ({
-                    ...transaction,
-                    category: categories[i],
-                  }));
-                };
-                
-                // Update transaction data with categories from ML model
-                const categorizedTransactions = await classifyTransactions(rawTransactions);
-                */}
+                {const classifyTransactions = async (transactions) => {
+    const response = await fetch('/classify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(transactions),
+    });
+    const categories = await response.json();
+    // Update transaction data with categories
+    const categorizedTransactions = transactions.map((transaction, i) => ({
+        ...transaction,
+        category: categories[i],
+    }));
+    // Update UI with categorized transactions
+    return categorizedTransactions;
+};
+}
                 
                 {filteredTransactions.length === 0 ? (
                   <div className="text-center py-12">
