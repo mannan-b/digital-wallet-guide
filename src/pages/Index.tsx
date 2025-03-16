@@ -1,13 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Layout from '@/components/Layout';
+import Navigation from '@/components/Navigation';
+import PaySection from '@/components/PaySection';
+import TransactionsSection from '@/components/TransactionsSection';
+import CalculatorSection from '@/components/CalculatorSection';
+import SageBotSection from '@/components/SageBotSection';
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState('pay');
+
+  // Tab transition animation
+  const tabVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: "easeIn" } }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          variants={tabVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="py-6 min-h-[calc(100vh-200px)]"
+        >
+          {activeTab === 'pay' && <PaySection />}
+          {activeTab === 'transactions' && <TransactionsSection />}
+          {activeTab === 'calculator' && <CalculatorSection />}
+          {activeTab === 'sagebot' && <SageBotSection />}
+        </motion.div>
+      </AnimatePresence>
+    </Layout>
   );
 };
 

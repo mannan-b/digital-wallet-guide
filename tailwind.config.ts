@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// FinSage specific colors
+				sage: {
+					50: '#f2fcf5',
+					100: '#e6f9eb',
+					200: '#bff0ce',
+					300: '#86e0a9',
+					400: '#4aca7a',
+					500: '#29b05e',
+					600: '#208f4c',
+					700: '#186f3c',
+					800: '#10462a',
+					900: '#072313',
+				},
+				fin: {
+					50: '#f5f7fa',
+					100: '#ebeef3',
+					200: '#d2d9e2',
+					300: '#a6b8cc',
+					400: '#7593b0',
+					500: '#517596',
+					600: '#395d7c',
+					700: '#2a4764',
+					800: '#1c3248',
+					900: '#0f1e30',
 				}
 			},
 			borderRadius: {
@@ -84,11 +110,62 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0'
+					},
+					to: {
+						opacity: '1'
+					}
+				},
+				'fade-out': {
+					from: {
+						opacity: '1'
+					},
+					to: {
+						opacity: '0'
+					}
+				},
+				'slide-in': {
+					from: {
+						transform: 'translateY(10px)',
+						opacity: '0'
+					},
+					to: {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'spin-slow': {
+					from: {
+						transform: 'rotate(0deg)'
+					},
+					to: {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.85'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'slide-in': 'slide-in 0.4s ease-out',
+				'spin-slow': 'spin-slow 10s linear infinite',
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['SF Pro Display', 'Inter', 'system-ui', 'sans-serif']
 			}
 		}
 	},
