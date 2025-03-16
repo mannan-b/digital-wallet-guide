@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load the XGBoost model
 xgb_model = xgb.Booster()
-xgb_model.load_model('path/to/your/model.json')
+xgb_model.load_model('src/components/classify.json')
 
 @app.route('/classify', methods=['POST'])
 def classify_transactions():
@@ -28,10 +28,12 @@ def get_category(prediction):
     # Logic to map prediction values to category labels
     # For example:
     category_map = {
-        0: 'shopping',
-        1: 'income',
-        2: 'food',
-        # Add more mappings as needed
+        0: 'Apparel',
+        1: 'Food',
+        2: 'Household',
+        3: 'Salary',
+        4: 'Tourism',
+        5: 'Transportation'
     }
     return category_map[prediction]
 
