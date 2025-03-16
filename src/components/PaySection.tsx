@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   CreditCard, 
   Building, 
-  DollarSign, 
+  IndianRupee, 
   Check, 
   ArrowRight, 
   Lock 
@@ -153,7 +153,7 @@ const PaySection: React.FC = () => {
         <Card className="border border-sage-100 dark:border-fin-800 shadow-md hover:shadow-lg transition-shadow duration-300 backdrop-blur-sm bg-white/80 dark:bg-fin-900/50">
           <CardHeader>
             <CardTitle className="text-2xl font-display flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-sage-500" />
+              <IndianRupee className="h-5 w-5 text-sage-500" />
               Make a Payment
             </CardTitle>
             <CardDescription>
@@ -167,7 +167,7 @@ const PaySection: React.FC = () => {
                   Amount
                 </Label>
                 <div className="relative">
-                  <DollarSign className="absolute left-3 top-2.5 h-5 w-5 text-fin-500 dark:text-fin-400" />
+                  <IndianRupee className="absolute left-3 top-2.5 h-5 w-5 text-fin-500 dark:text-fin-400" />
                   <Input
                     id="amount"
                     type="number"
@@ -273,7 +273,7 @@ const PaySection: React.FC = () => {
           </div>
           <h2 className="text-2xl font-display font-medium mb-2">Payment Successful!</h2>
           <p className="text-fin-600 dark:text-fin-300 mb-6">
-            Your transaction of ${amount} has been completed.
+            Your transaction of ₹{amount} has been completed.
           </p>
           <p className="text-sm text-fin-500 dark:text-fin-400">
             Transaction details have been added to your transaction history.

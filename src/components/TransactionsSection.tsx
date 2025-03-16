@@ -269,7 +269,7 @@ const TransactionsSection: React.FC = () => {
                             "font-medium",
                             transaction.amount > 0 ? "text-sage-600 dark:text-sage-400" : "text-fin-600 dark:text-fin-300"
                           )}>
-                            {transaction.amount > 0 ? '+' : ''}{transaction.amount.toFixed(2)}
+                            {transaction.amount > 0 ? '+' : ''}₹{Math.abs(transaction.amount).toFixed(2)}
                           </span>
                         </div>
                       </motion.div>
